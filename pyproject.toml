@@ -2,14 +2,22 @@
 name = "boiling-point-bot"
 version = "0.1.0"
 description = "Default template for PDM package"
-authors = [
-    {name = "k.nosorev", email = "djkoo2001@gmail.com"},
-]
-dependencies = []
-requires-python = "<3.12"
+authors = [{ name = "k.nosorev", email = "djkoo2001@gmail.com" }]
+dependencies = ["pydantic>=2.7.1"]
+requires-python = "==3.11.*"
 readme = "README.md"
-license = {text = "MIT"}
+license = { text = "MIT" }
 
 
 [tool.pdm]
 distribution = false
+
+[tool.pdm.dev-dependencies]
+dev = [
+  "wemake-python-styleguide>=0.19.2",
+  "mypy>=1.9.0",
+  "types-requests>=2.31.0.20240406",
+]
+
+[tool.black]
+line-length = 90
